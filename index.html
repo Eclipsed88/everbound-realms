@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Everbound Realms — Text RPG</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/classes.js" defer></script>
+  <script src="js/beasts.js" defer></script>
+  <script src="js/game.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <header><p class="eyebrow">A choice-based text adventure</p><h1>Everbound Realms</h1></header>
+    <nav class="tools" aria-label="Game tools">
+      <button id="save-button" type="button">Save</button><button id="load-button" type="button">Load</button><button id="export-save-button" type="button">Download save backup</button><label class="file-button">Load save backup<input id="import-save-input" type="file" accept="application/json,.json"></label><button id="display-button" type="button">Reading options</button>
+      <button id="journal-button" type="button">Journal</button><button id="map-button" type="button">Map</button><button id="progression-button" type="button">Skills and careers</button>
+    </nav>
+    <section class="identity" aria-label="Character identity">
+      <label>Character name <input id="name-input" maxlength="24" value="Adventurer"></label>
+      <label>Background <select id="background-select"><option value="wanderer">Wanderer — balanced start</option><option value="local">Valoria local — +1 Vitality</option><option value="scholar">Apprentice scholar — +1 Intelligence</option><option value="streetwise">Streetwise — +1 Dexterity</option><option value="caravan">Caravan performer — +1 Wisdom</option></select></label>
+      <button id="identity-button" type="button">Set identity</button>
+    </section>
+    <section class="status" aria-label="Character status">
+      <div><strong id="hero-name">Adventurer</strong><span id="hero-level">Choose a class</span></div>
+      <div class="health-label"><span>Health</span><span id="health-text">—</span></div>
+      <progress id="health-bar" max="100" value="100"></progress>
+      <div class="resource-label"><span id="mana-text">Mana: —</span><span id="xp-text">XP: —</span></div>
+      <p id="class-move">Choose a class to begin.</p>
+      <p id="combat-style-status">Combat style: choose a class first.</p>
+      <p id="stats-summary">Stats: —</p>
+      <p id="equipment">Equipment: —</p>
+      <p id="inventory">Inventory: —</p>
+      <p id="companions">Companion: none</p>
+      <p id="profession-list">Professions: none</p>
+      <p id="world-time">Day 1 · Morning · Clear</p>
+      <p id="conditions">Conditions: none</p>
+    </section>
+    <details class="inventory-sheet" open>
+      <summary>Inventory and equipment</summary>
+      <h3>Equipment slots</h3><div id="equipment-slots" class="slot-grid"></div>
+      <h3>Backpack <span id="pack-count"></span></h3><div id="backpack-items" class="slot-grid"></div>
+    </details>
+    <section class="story" aria-live="polite">
+      <h2 id="scene-title">Choose Your Adventurer</h2>
+      <p id="story-text">Choose a class, then decide how your story unfolds.</p>
+      <div id="choices" class="choices"></div>
+    </section>
+    <details class="log-panel"><summary>Adventure log</summary><ol id="story-log"></ol></details>
+    <section id="display-options" class="display-options" hidden aria-label="Display options"></section>
+    <footer>Your progress saves in this browser automatically. Download a save backup to move it to another browser or device.</footer>
+  </main>
+</body>
+</html>

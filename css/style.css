@@ -1,0 +1,44 @@
+:root { color-scheme: dark; font-family: Georgia, "Times New Roman", serif; background: #151713; color: #eee9d8; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; padding: 32px 16px; background: radial-gradient(ellipse at top, #343a2a, #151713 65%); font-size: calc(16px * var(--text-scale, 1)); }
+.game { width: min(760px, 100%); margin: 0 auto; }
+header { text-align: center; padding: 20px 10px 28px; border-bottom: 1px solid #697052; }
+.eyebrow { color: #b5bd86; letter-spacing: .16em; text-transform: uppercase; font: 12px Arial, sans-serif; }
+h1 { margin: 8px 0 0; color: #e5d39a; font-size: clamp(32px, 7vw, 48px); }
+.status, .story { margin-top: 22px; padding: 20px; border: 1px solid #505744; border-radius: 8px; background: #20231d; }
+.tools, .identity { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; }
+.tools button, .identity button { text-align: center; padding: 8px 12px; }
+.identity { padding: 12px; border: 1px solid #505744; border-radius: 8px; background: #20231d; }
+.identity label { display: grid; gap: 5px; color: #b8b9a7; font: 13px Arial, sans-serif; }
+.identity input, .identity select { min-height: 36px; padding: 7px; border: 1px solid #697052; border-radius: 4px; background: #151713; color: #eee9d8; }
+.inventory-sheet { margin-top: 14px; padding: 16px 20px; border: 1px solid #505744; border-radius: 8px; background: #20231d; }
+.inventory-sheet summary { color: #e5d39a; cursor: pointer; font-weight: bold; }
+.log-panel { margin-top: 12px; padding: 12px 18px; border: 1px solid #505744; border-radius: 8px; background: #20231d; color: #c2c4af; }
+.log-panel summary { color: #e5d39a; cursor: pointer; }
+.log-panel ol { max-height: 240px; overflow: auto; padding-left: 24px; font: 13px/1.5 Arial, sans-serif; }
+.inventory-sheet h3 { margin: 14px 0 8px; color: #cbd39e; font: bold 13px Arial, sans-serif; }
+.slot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 8px; }
+.slot { min-height: 50px; padding: 9px; border: 1px solid #505744; border-radius: 5px; background: #191c17; color: #eee9d8; font: 13px/1.35 Arial, sans-serif; }
+.slot strong { display: block; color: #b8b9a7; font-size: 11px; text-transform: uppercase; }
+.slot button { width: 100%; margin-top: 4px; text-align: center; }
+.status > div:first-child, .health-label, .resource-label { display: flex; justify-content: space-between; gap: 12px; }
+#hero-name { color: #e5d39a; } #hero-level, footer, #inventory, #stats-summary, #equipment, #companions, #class-move, .resource-label { color: #c2c4af; }
+.health-label, .resource-label { margin-top: 14px; font: 14px Arial, sans-serif; }
+progress { width: 100%; height: 14px; accent-color: #a6bd6c; }
+#inventory, #stats-summary, #equipment, #companions, #profession-list, #class-move, #combat-style-status, #world-time { margin: 10px 0 0; font: 14px/1.5 Arial, sans-serif; }
+.story h2 { color: #e5d39a; margin-top: 0; }
+.story p { line-height: 1.65; white-space: pre-line; }
+.choices { display: grid; gap: 10px; margin-top: 22px; }
+button { padding: 12px 14px; border: 1px solid #87935d; border-radius: 5px; background: #343d2c; color: #f3efd9; text-align: left; font: inherit; cursor: pointer; }
+button:hover, button:focus-visible { background: #485536; outline: 2px solid #e5d39a; outline-offset: 2px; }
+.file-button { display: inline-flex; align-items: center; padding: 8px 12px; border: 1px solid #87935d; border-radius: 5px; background: #343d2c; color: #f3efd9; font: inherit; cursor: pointer; }
+.file-button:hover, .file-button:focus-within { background: #485536; outline: 2px solid #e5d39a; outline-offset: 2px; }
+.file-button input { width: min(190px, 45vw); margin-left: 8px; color: #f3efd9; }
+.display-options { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; padding: 12px; border: 1px solid #697052; border-radius: 6px; background: #20231d; }
+.display-options[hidden] { display: none; }
+.display-options p { width: 100%; margin: 0; }
+body.high-contrast { background: #000; color: #fff; }
+body.high-contrast .status, body.high-contrast .story, body.high-contrast .inventory-sheet, body.high-contrast .log-panel, body.high-contrast .display-options { background: #000; border-color: #fff; }
+body.high-contrast button, body.high-contrast .file-button { background: #111; border-color: #ffec70; color: #fff; }
+body.reduced-motion *, body.reduced-motion *::before, body.reduced-motion *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+footer { margin: 18px 4px; text-align: center; font: 13px Arial, sans-serif; }
